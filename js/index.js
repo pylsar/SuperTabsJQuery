@@ -91,7 +91,7 @@ $(document).ready(function() {
             }
         })
     })
-//табы выбора Фирменная Палитра  / strange
+//табы выбора Норм цвета  / strange
     // функция сброса значений
     function clearColorTab() {
         $('.color__box').hide(); // убираем блок с контентом
@@ -99,7 +99,7 @@ $(document).ready(function() {
     }
 
     function ColorTabs() {
-        // таб фирменные цвета
+        // таб норм цвета
         $('#ordinary').on('click', function () {
             clearColorTab();
             $(this).addClass('isActiveTab');
