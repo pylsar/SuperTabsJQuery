@@ -8,8 +8,88 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    
 
+    <main class="color">
+        <div class="color__navigation">
+            <div class="color__choose-type">
+                <div class="color__head">
+                    <span>тип</span>
+                    <span class="color__type">Круг</span>
+                </div>
+                <div class="color__drop-list">
+                    <div class="color__drop-item">
+                        <input type="radio" id="modelTypeRound" name="type" value="Круг" checked>
+                        <label for="modelTypeRound">Круг</label>
+                    </div>
+                    <div class="color__drop-item">
+                        <input type="radio" id="modelTypeSquare" name="type" value="Квадрат">
+                        <label for="modelTypeSquare">Квадрат</label>
+                    </div>
+                    <div class="color__drop-item">
+                        <input type="radio" id="modelTypeHeating" name="type" value="Треугольник">
+                        <label for="modelTypeHeating">Треугольник</label>
+                    </div>
+                </div>
+            </div>
+            <div class="color__choose-tabs">
+                <div class="color__tab isActiveTab" id="ordinary">Основные Цвета</div>
+                <div class="color__tab" id="strange">Странные цвета</div>
+            </div>
+        </div>
+        <div class="color__content">
+            <div class="color__left">
+                    <img src="./assets/images/detail/00_kryg.png" alt="">
+            </div>
+            <div class="color__right">
+                <div class="color__box color__ordinary">
+                   <div class="color__ordinary-wrap">
+                       <div class="color__ordinary-box">
+                            <img src="./assets/images/detail/00_kryg.png" alt="" class="color__ordinary-img isActiveColor">
+                            <img src="./assets/images/detail/00_kvadrat.png" alt="" class="color__ordinary-img">
+                           <img src="./assets/images/detail/00_romb.png" alt="" class="color__ordinary-img">
+                       </div>
+                    <div class="color__ordinary-text">
+                        <p>тут текст</p>
+                    </div>
+                   </div>
+                </div>
+                <div class="color__box color__strange ">
+                    <div class="color__strange-wrap">
+                        <div class="color__strange-box">
+                            <div class="color__number color__strange-10 isActiveGroup">
+                                <img src="../color/images/strange/strange_1000.png" alt="" class="color__ordinary-img">
+                                <img src="../color/images/strange/strange_1001.png" alt="" class="color__ordinary-img">
+                            </div>
+                            <div class="color__number color__strange-20">
+                                <img src="../color/images/strange/strange_2000.png" alt="" class="color__ordinary-img">
+                                <img src="../color/images/strange/strange_2001.png" alt="" class="color__ordinary-img">
+                            </div>
+                            <div class="color__number color__strange-30">
+                                <img src="../color/images/strange/strange_3000.png" alt="" class="color__ordinary-img">
+                                <img src="../color/images/strange/strange_3001.png" alt="" class="color__ordinary-img">
+                            </div>
+                        </div>
+                        <div class="color__group">
+                            <div class="color__group-choose isActiveGroupTab">
+                                <div class="color__bg"></div>
+                                <div class="color__bg-name">Фигура</div>
+                            </div>
+                            <div class="color__group-choose">
+                                <div class="color__bg"></div>
+                                <div class="color__bg-name">Звезда</div>
+                            </div>
+                            <div class="color__group-choose">
+                                <div class="color__bg"></div>
+                                <div class="color__bg-name">Стрелка</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="assets/libs/jquery3_6.js"></script>
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>

@@ -1,1 +1,121 @@
-alert(1);
+$(document).ready(function() {
+    //ЦВЕТОВЫЕ РЕШЕНИЯ
+
+    //выбираем значение инпута и вставлеям в заголовок выпадающего меню
+    $('input[name=type]').change(function () {
+        $(".color__type").text(this.value);
+    })
+   // показываем/скрываем список выбора коллектора
+    $('.color__head').on('click', function () {
+        $('.color__drop-list').toggleClass('showDropList');
+    })
+    // имитируем клик на иконку цвета при открывании выбора коллектора чтобы получить первый url
+    $('.color__choose-type').one('click', function(){
+        $('.color__ordinary-box').find('.color__ordinary-img').first().addClass('isActiveColor').click();
+    })
+
+// показываем детальную картинку
+    function changeColors() {
+        var colorName;
+        var round = 'krug';
+        var square = 'kvadrat';
+        var heating = 'estet';
+        // получаем название кружочка
+        function imageName() {
+            $('.color__ordinary-img').each(function () {
+                $(this).on('click', function () {
+                    $('.color__ordinary-img').removeClass('isActiveColor'); // убираем активный класс у всех кружочков
+                    $(this).addClass('isActiveColor'); // добавляем активный класс кружочку на который кликнули
+                        // убираем лишнее из названия
+                        var src = $(this).attr('src').split('/');
+                        var colorNameIcon = src[src.length - 1].split('.')[0].replace(/\.*/, '');
+                        colorName = colorNameIcon;
+                    // меняем url детальной картинки при клике на кружочек
+                    if($('#modelTypeRound').is(':checked')){
+                        detailPhotoClear();
+                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${ round }.png`);
+                    }else if($('#modelTypeSquare').is(':checked')){
+                        detailPhotoClear();
+                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${square}.png`);
+                    }else if($('#modelTypeHeating').is(':checked')){
+                        detailPhotoClear();
+                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${heating}.png`);
+                    }
+                })
+            })
+        }
+        imageName();
+
+        // Выбор типа Круглый/ Квадратный/ Отопительный
+        function selectType() {
+            // при клике меняем url детальной картинки
+            $('#modelTypeRound').on("click", function () {
+                detailPhotoClear();
+                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${ round }.png`);
+            });
+            $('#modelTypeSquare').on("click", function () {
+                detailPhotoClear();
+                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${square}.png`);
+            });
+            $('#modelTypeHeating').on("click", function () {
+                detailPhotoClear();
+                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${heating}.png`);
+            });
+        }
+        selectType();
+
+        //очищаем детальную картинку
+        function detailPhotoClear() {
+            $(".color__left img").removeAttr("src");
+        }
+    }
+    changeColors();
+
+    //выбираем цветовые группы strange
+
+    $('.color__group-choose').each(function(index){
+        $(this).on('click', function(){
+            $('.color__group-choose').removeClass('isActiveGroupTab'); // убираем обводку таба
+            $('.color__number').removeClass('isActiveGroup'); //убираем контент
+            $(this).addClass('isActiveGroupTab'); // добавдяем обводку таба
+            // выводим контент
+            if(index === 0){
+                $('.color__strange-10').addClass('isActiveGroup');
+                $('.color__strange-10').find('.color__ordinary-img').first().addClass('isActiveColor').click();
+            }else if( index === 1){
+                $('.color__strange-20').addClass('isActiveGroup');
+                $('.color__strange-20').find('.color__ordinary-img').first().addClass('isActiveColor').click();
+            }else if( index === 2){
+                $('.color__strange-30').addClass('isActiveGroup');
+                $('.color__strange-30').find('.color__ordinary-img').first().addClass('isActiveColor').click();
+            }
+        })
+    })
+//табы выбора Фирменная Палитра  / strange
+    // функция сброса значений
+    function clearColorTab() {
+        $('.color__box').hide(); // убираем блок с контентом
+        $('.color__tab').removeClass('isActiveTab'); // убираем цвет кнопки
+    }
+
+    function ColorTabs() {
+        // таб фирменные цвета
+        $('#ordinary').on('click', function () {
+            clearColorTab();
+            $(this).addClass('isActiveTab');
+            $('.color__strange').hide();
+            $('.color__ordinary').show();
+            $('.color__ordinary-box').find('.color__ordinary-img').first().addClass('isActiveColor').click(); // имитируем клик по первому кружку для получения url
+        });
+        // таб strange
+        $('#strange').on('click', function () {
+            clearColorTab();
+            $(this).addClass('isActiveTab');
+            $('.color__ordinary').hide();
+            $('.color__strange').show();
+            $('.color__strange-box').find('.color__ordinary-img').first().addClass('isActiveColor').click(); // имитируем клик по первому кружку для получения url
+            $('.color__strange-box').find('.isActiveGroup .color__ordinary-img').first().addClass('isActiveColor').click(); // имитируем клик по первому кружку для получения url
+        });
+    }
+    ColorTabs();
+});

@@ -1,8 +1,109 @@
-*{
-    margin: 0;
-    padding: 0;
+.color__navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-body{
-    background: red;
+.color__choose-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 324px;
+    position: relative;
 }
+.color__head{
+    display: flex;
+    flex-direction: column;
+    background: gray;
+}
+
+.color__choose-tabs{
+    display: flex;
+    justify-content: center;
+    width: calc( 100% - 324px);
+}
+
+.color__drop-list{
+    display: none;
+    background: gray;
+    position: absolute;
+    left: 0;
+    bottom: -88px;
+}
+
+.color__tab{
+    padding: 1.2rem;
+    background: gray;
+    margin-left: 2.4rem;
+    cursor: pointer;
+}
+
+.color__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.color__left{
+    width: 324px;
+    height: 600px;
+}
+.color__right{
+    flex: 1;
+    height: 600px;
+}
+.color__strange{
+    display: none;
+}
+.color__strange-wrap, .color__ordinary-wrap{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    border: 1px solid red;
+}
+.color__strange-box, .color__ordinary-box{
+    display: flex;
+    flex: 1;
+
+}
+.color__strange-box img, .color__ordinary-box img{
+    width: 52px;
+    height: 52px;
+}
+.color__ordinary-text{
+    height: 224px;
+    background: gray;
+}
+.color__group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+}
+.color__bg{
+    width: 79px;
+    height: 50px;
+    background: skyblue;
+}
+.color__number{
+    display: none;
+}
+  
+.showDropList{
+    display: block;
+}
+.isActiveTab{
+    background: yellow;
+}
+.isActiveGroup{
+    display: block;
+}
+.isActiveGroupTab{
+    border: 2px solid red;
+}
+.isActiveColor{
+    border: 2px solid red;
+}
+  
