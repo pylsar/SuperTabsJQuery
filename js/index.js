@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    //ЦВЕТОВЫЕ РЕШЕНИЯ
+
 
     //выбираем значение инпута и вставлеям в заголовок выпадающего меню
     $('input[name=type]').change(function () {
         $(".color__type").text(this.value);
     })
-   // показываем/скрываем список выбора коллектора
+   // показываем/скрываем список выбора формы
     $('.color__head').on('click', function () {
         $('.color__drop-list').toggleClass('showDropList');
     })
-    // имитируем клик на иконку цвета при открывании выбора коллектора чтобы получить первый url
+    // имитируем клик на иконку цвета при открывании выбора формы чтобы получить первый url
     $('.color__choose-type').one('click', function(){
         $('.color__ordinary-box').find('.color__ordinary-img').first().addClass('isActiveColor').click();
     })
@@ -17,9 +17,9 @@ $(document).ready(function() {
 // показываем детальную картинку
     function changeColors() {
         var colorName;
-        var round = 'krug';
+        var round = 'kryg';
         var square = 'kvadrat';
-        var heating = 'estet';
+        var heating = 'romb';
         // получаем название кружочка
         function imageName() {
             $('.color__ordinary-img').each(function () {
@@ -33,13 +33,13 @@ $(document).ready(function() {
                     // меняем url детальной картинки при клике на кружочек
                     if($('#modelTypeRound').is(':checked')){
                         detailPhotoClear();
-                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${ round }.png`);
+                        $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${ round }.png`);
                     }else if($('#modelTypeSquare').is(':checked')){
                         detailPhotoClear();
-                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${square}.png`);
+                        $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${square}.png`);
                     }else if($('#modelTypeHeating').is(':checked')){
                         detailPhotoClear();
-                        $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${heating}.png`);
+                        $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${heating}.png`);
                     }
                 })
             })
@@ -51,15 +51,15 @@ $(document).ready(function() {
             // при клике меняем url детальной картинки
             $('#modelTypeRound').on("click", function () {
                 detailPhotoClear();
-                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${ round }.png`);
+                $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${ round }.png`);
             });
             $('#modelTypeSquare').on("click", function () {
                 detailPhotoClear();
-                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${square}.png`);
+                $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${square}.png`);
             });
             $('#modelTypeHeating').on("click", function () {
                 detailPhotoClear();
-                $('.color__left img').attr("src", `../color/images/detail/${ colorName }_${heating}.png`);
+                $('.color__left img').attr("src", `./assets/images/detail/${ colorName }_${heating}.png`);
             });
         }
         selectType();

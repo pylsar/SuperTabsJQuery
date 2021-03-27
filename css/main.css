@@ -48,6 +48,14 @@
 .color__left{
     width: 324px;
     height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+.color__left img {
+    width: 316px;
+    height: auto;
 }
 .color__right{
     flex: 1;
