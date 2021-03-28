@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     //выбираем значение инпута и вставлеям в заголовок выпадающего меню
     $('input[name=type]').change(function () {
         $(".color__type").text(this.value);
@@ -10,7 +9,7 @@ $(document).ready(function() {
         $('.color__drop-list').toggleClass('showDropList');
     })
     // имитируем клик на иконку цвета при открывании выбора формы чтобы получить первый url
-    $('.color__choose-type').one('click', function(){
+    $(document).one('mousemove', function(){
         $('.color__ordinary-box').find('.color__ordinary-img').first().addClass('isActiveColor').click();
     })
 
