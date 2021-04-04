@@ -78,7 +78,13 @@
 .color__strange-box img, .color__ordinary-box img{
     width: 52px;
     height: 52px;
+    cursor: pointer;
 }
+.color__strange-box img.isActiveColor, .color__ordinary-box img.isActiveColor{
+    pointer-events: none;
+}
+
+
 .color__ordinary-text{
     height: 224px;
     background: gray;

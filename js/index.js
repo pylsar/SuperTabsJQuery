@@ -15,10 +15,10 @@ $(document).ready(function() {
 
 // показываем детальную картинку
     function changeColors() {
-        var colorName;
-        var round = 'kryg';
-        var square = 'kvadrat';
-        var heating = 'romb';
+        let colorName;
+        const round = 'kryg';
+        const square = 'kvadrat';
+        const heating = 'romb';
         // получаем название кружочка
         function imageName() {
             $('.color__ordinary-img').each(function () {
@@ -26,8 +26,8 @@ $(document).ready(function() {
                     $('.color__ordinary-img').removeClass('isActiveColor'); // убираем активный класс у всех кружочков
                     $(this).addClass('isActiveColor'); // добавляем активный класс кружочку на который кликнули
                         // убираем лишнее из названия
-                        var src = $(this).attr('src').split('/');
-                        var colorNameIcon = src[src.length - 1].split('.')[0].replace(/\.*/, '');
+                        let src = $(this).attr('src').split('/');
+                        let colorNameIcon = src[src.length - 1].split('.')[0].replace(/\.*/, '');
                         colorName = colorNameIcon;
                     // меняем url детальной картинки при клике на кружочек
                     if($('#modelTypeRound').is(':checked')){
